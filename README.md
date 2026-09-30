@@ -54,7 +54,7 @@ Welcome to the ultimate curated directory of **Cloud Backup**, **Disaster Recove
 
 ## 🔓 Open-Source GitHub Projects 🌐
 
-*Community-driven open-source backup engines, Kubernetes DR controllers, and SaaS archivers sorted by GitHub Stars_Count.* ⭐
+*Community-driven open-source backup engines, Kubernetes DR controllers, and SaaS archivers sorted by GitHub_Stars_Count.* ⭐
 
 | Project | GitHub_Stars 🌟 | Primary Category 🏷️ | License 📜 | Description 📝 |
 | :--- | :--- | :--- | :--- | :--- |
