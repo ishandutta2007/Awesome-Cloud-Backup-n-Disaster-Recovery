@@ -1,263 +1,108 @@
-# Awesome-Cloud-Backup-n-Disaster-Recovery
-
-## Top Cloud Backup & Disaster Recovery Platforms Ecosystem
-
-
-
-**Curated List of SaaS Products & Open-Source GitHub Projects**
-
-*Focused on Data Protection, Ransomware Resilience, SaaS Backup & Kubernetes Disaster Recovery*
-
-**Last updated: September 2026**
-
-
-
-This repository tracks notable **SaaS platforms** and **open-source projects** for **Cloud Backup & Disaster Recovery**. These tools help organizations protect workloads across on-premises, cloud, and SaaS environments—from VM backup and Kubernetes disaster recovery to Microsoft 365 and Google Workspace data protection.
-
-
-
-**Examples** include Veeam, Acronis, Druva, Cohesity, HYCU, Rubrik, CrashPlan, Backblaze Business, Spanning, and Keepit (the category leaders).
-
-
-
-**Open-source emphasis**: This section is heavily expanded with every major active project for self-hosting, custom backup pipelines, and transparent data protection—ideal for organizations that need full control over their backup infrastructure without per-workload SaaS fees or vendor lock-in.
-
-
-
-Contributions welcome! Open a PR to add/update entries. Keep descriptions factual and link to official sites.
-
-
-
-## Table of Contents
-
-
-
-- [SaaS/Hosted Platforms](#saas-hosted-platforms)
-
-- [Open-Source GitHub Projects](#open-source-github-projects)
-
-- [How to Contribute](#how-to-contribute)
-
-- [Disclaimer](#disclaimer)
-
-
-
-## SaaS/Hosted Platforms
-
-
-
-- **[Veeam](https://www.veeam.com/)**
-
-  Industry-standard backup and recovery platform for virtual, physical, cloud, and SaaS workloads. Provides Veeam Backup & Replication, Veeam Backup for Microsoft 365, and Veeam Kasten for Kubernetes data protection. SOC 2 Type II compliant.
-
-
-
-- **[Acronis](https://www.acronis.com/)**
-
-  Cyber protection platform combining backup, disaster recovery, and cybersecurity. Provides image-based backup, ransomware protection, and cloud-to-cloud backup for Microsoft 365.
-
-
-
-- **[Druva](https://www.druva.com/)**
-
-  Cloud-native data protection platform for endpoints, SaaS applications, and cloud workloads. Provides centralized management, retention, search, and compliance reporting.
-
-
-
-- **[Cohesity](https://www.cohesity.com/)**
-
-  Data management platform consolidating backup, recovery, and data security. Provides immutable backups and ransomware detection.
-
-
-
-- **[HYCU](https://www.hycu.com/)**
-
-  Purpose-built backup and recovery for Nutanix, VMware, and cloud workloads. Provides application-aware protection with granular recovery.
-
-
-
-- **[Rubrik](https://www.rubrik.com/)**
-
-  Zero trust data security platform with immutable backups and ransomware recovery. Provides data observability and governance.
-
-
-
-- **[CrashPlan](https://www.crashplan.com/)**
-
-  Endpoint backup and recovery for small businesses. Provides continuous backup, version history, and cross-platform restore.
-
-
-
-- **[Backblaze Business](https://www.backblaze.com/)**
-
-  Cloud storage and backup platform. Provides unlimited endpoint backup and B2 cloud storage for offsite data protection.
-
-
-
-- **[Spanning (Kaseya)](https://spanning.com/)**
-
-  SaaS backup and recovery for Microsoft 365, Google Workspace, and Salesforce. Protects over 24,000 organizations with automated daily backups and infinite retention .
-
-
-
-- **[Keepit](https://www.keepit.com/)**
-
-  Independent cloud backup for SaaS applications including Microsoft 365, Google Workspace, and Salesforce. Provides immutable data protection and instant recovery.
-
-
-
-## Open-Source GitHub Projects
-
-
-
-### Cross-Platform Backup Engines
-
-
-
-- **[Bareos](https://github.com/bareos/bareos)**
-
-  **The most mature open-source enterprise backup solution.** Cross-network backup and recovery licensed under **AGPLv3** with **no open-core restrictions** . Supports Linux, Windows, FreeBSD, macOS, and other major operating systems. **Key features**: Flexible storage targets (disk, tape, S3-compatible object storage); deduplication-friendly storage optimized for ZFS, VDO, or btrfs; **Always Incremental** backup scheme for file-based backups; role-based ACLs; encrypted communication and backup encryption; Bareos WebUI for administration and restore; **virtualization plugins** for VMware vSphere, Hyper-V, and Proxmox; **bare-metal recovery** with Relax-and-Recover (Linux) and Barri (Windows); NDMP SAN backups; tape library and WORM media support . Bareos 25 adds Hyper-V Plugin, Proxmox Plugin, Bareos Recovery Imager for Windows, and Libcloud Plugin for S3-compatible object backup .
-
-
-
-- **[Restic](https://github.com/restic/restic)**
-
-  **Fast, efficient, secure open-source backup program.** **35.8k stars, actively maintained** . Features encryption, deduplication, snapshots, and multiple storage backends including local, SFTP, REST, and S3-compatible stores. **BSD-2-Clause license**. Widely adopted as the foundational backup engine for many higher-level tools. Foundation for **Zmanda Pro** .
-
-
-
-- **[BorgBackup](https://github.com/borgbackup/borg)**
-
-  **Deduplicating backup program with authenticated encryption and compression.** **13.7k stars, actively maintained** . Optimized for Unix-like systems. Stores only unique data blocks (no redundancy), making it highly space-efficient. Supports compression and authenticated encryption. **Reliable and fast in incremental mode**: after first full backup, subsequent backups copy only changes. Can operate in server mode (deploy Borg repository on NAS or remote server accessible via SSH). **Vorta** provides a GUI for Borg . **BSD-3-Clause license**.
-
-
-
-- **[Kopia](https://github.com/kopia/kopia)**
-
-  **Cross-platform backup tool with lock-free deduplication, encryption, snapshots, and pruning.** **5.7k stars, actively maintained** . Supports local disk, SFTP, and many cloud storage backends. **Apache-2.0 license**. Used by **Kanister** for Kubernetes data protection .
-
-
-
-### Kubernetes Backup & Disaster Recovery
-
-
-
-- **[Velero](https://github.com/vmware-tanzu/velero)**
-
-  **The most mature open-source Kubernetes backup and disaster recovery tool.** Provides backup and restore of Kubernetes resources (Deployments, Services, ConfigMaps) and persistent volumes. **Persistent volume snapshots** accelerate restore. Supports **selective restores** (specific namespaces, resource groups, or individual objects) without restoring entire cluster. **Scheduled backups** for regular protection. Integrates with cloud storage buckets (AWS S3, GCP Storage, Azure Blob) and S3-compatible systems. Deployment via Helm chart, YAML manifests, or CLI . **Velero is the foundation for Kubernetes DR**, with **community support rated 5/5** in comparative evaluations . **Key limitation**: Plugin-based architecture, CRD version drift, and debugging complexity can make it finicky for critical production restores .
-
-
-
-- **[Kanister](https://github.com/kanisterio/kanister)**
-
-  **CNCF sandbox project for application-level data management on Kubernetes.** Originally created by the **Veeam Kasten team**. Provides cohesive APIs for defining and curating data operations. **Kubernetes-native**: APIs implemented as Custom Resource Definitions (CRDs). **Storage agnostic**: transfers backup data between services and object storage of your choice. **Pre-built blueprints** for AWS RDS, Cassandra, Couchbase, Elasticsearch, etcd, FoundationDB, MongoDB, MySQL, PostgreSQL, and Redis. **Secured via RBAC**, with observability through Prometheus, Grafana, and Loki. **Apache-2.0 license** .
-
-
-
-- **[Stash by AppsCode](https://github.com/stashed/stash)**
-
-  **Declarative, GitOps-native open-source alternative to Velero.** Leverages **Restic** for backups. Define backup strategy directly with CRDs alongside your application: specify what to back up (PVC, database), where to put it (Repository), and how often (BackupConfiguration). **Streamlined operational model** compared to Velero's plugin system for simple use cases. Efficient and encrypted backups. **Restore process is straightforward** .
-
-
-
-- **[Kasten K10](https://www.kasten.io/)**
-
-  **Enterprise-grade Kubernetes data protection (commercial, Veeam).** **Application-aware**, policy-driven automation, and multi-cluster disaster recovery. **Excellent technical support and UI**, but **commercial licensing** and **smaller community** than Velero . Best for enterprises with complex stateful applications and strict DR requirements .
-
-
-
-### Cloud & Virtualization Backup
-
-
-
-- **[Plakar](https://github.com/PlakarKorp/plakar)**
-
-  **Open-source backup engine with zero-trust resilience architecture.** Supports **end-to-end encryption with native zero-knowledge encryption**—keys never leave the source. **Client-side deduplication and compression** achieve **90%+ lower storage and network costs** . **Petabyte-scale performance** with index-in-snapshot architecture (no central database bottleneck). **Vendor-neutral archive format** (PTAR & Kloset) ensures data remains readable 50+ years from now. **Plakar Control Plane** (free plan available) provides self-hosted backup management with web interface, inventories, integrations, policies, and scheduling . Available as pre-built binaries for macOS, FreeBSD, Alpine, Debian, Arch, RPM, Linux, OpenBSD, and Windows .
-
-
-
-- **[Zmanda Pro](https://github.com/zmanda/zmanda)**
-
-  **High-performance, open-source, restic-based backup and recovery solution for hybrid cloud environments** . **Key features**: centralized management with backup policies and schedules; flexible media options (disk, optical, Amazon S3, Wasabi, GCP, Azure); **wide platform support** (Linux, Windows, macOS; MS SQL, MongoDB, MySQL, Oracle; Hyper-V, VMware); **client-side deduplication** saving up to 89% storage; **forever incremental backups**; ransomware protection with air-gapped backups; **Microsoft 365 Backup** (Outlook, OneDrive for Business, SharePoint, Teams); **bare-metal recovery (BMR)**; continuous updates and 24x7 support .
-
-
-
-- **[DaliBackup-OSS](https://github.com/daliranas/DaliBackup-OSS)**
-
-  **Sovereign, lightweight backup and disaster recovery engine for Microsoft Hyper-V, Proxmox VE (QEMU & LXC), and IMAP Mailboxes.** **Zero external database dependencies** (embedded SQLite) . **Ultra-lightweight**: runs on Node.js 22 LTS with native embedded SQLite—no heavy MariaDB, Redis, or MinIO required. **Hyper-V Engine**: continuous streaming GZip compression, VSS application-consistent checkpoints, multi-disk capture, instant disaster recovery. **Proxmox VE Integration**: QEMU VM and LXC container backup via Proxmox REST API 2.0 and native vzdump hook. **Universal IMAP Email Sync**: incremental email synchronization with UID tracking and .tar.gz export. **Multi-protocol storage**: POSIX/NFS, SFTP (SSH key/password), FTP/FTPS. **Zero-Trust Security**: AES-256-GCM hardware encryption for secrets at rest and machine-bound agent tokens . **Docker deployment** with one-click run .
-
-
-
-### SaaS & Email Backup
-
-
-
-- **[Open Archiver](https://github.com/LogicLabs-OU/OpenArchiver)**
-
-  **Secure, sovereign, open-source platform for email archiving.** Provides self-hosted solution for archiving, storing, indexing, and searching emails from **Google Workspace (Gmail), Microsoft 365, PST files, and generic IMAP inboxes** . **Key features**: universal ingestion (initial bulk imports + continuous real-time sync); secure storage in standard `.eml` format with **deduplication and compression**; **pluggable storage backends** (local filesystem, S3-compatible object storage); **full-text search** across emails and attachments (PDF, DOCX); **thread discovery**; **compliance & retention policies**; **file hash and encryption** for tamper-proof records; **immutable audit trail**. **Tech stack**: SvelteKit frontend, Node.js/Express backend, Meilisearch for search, PostgreSQL for metadata, Docker Compose deployment .
-
-
-
-- **[Spanning Backup for Microsoft 365 API](https://github.com/SpanningCloudApps/SB365-Powershell)**
-
-  PowerShell module for managing Spanning Backup for Microsoft 365. Spanning provides cloud-to-cloud data protection for Microsoft 365, Google Workspace, and Salesforce, protecting over **24,000 organizations and 2.5 million users** with automated daily backups, unlimited on-demand backups, infinite retention, and granular point-in-time restore . RESTful APIs for license management and data export .
-
-
-
-### Additional Strong Open-Source Options
-
-
-
-- **Enterprise Backup**: **Bareos** (AGPLv3, no open-core, hypervisor plugins, tape support) .
-
-- **Backup Engines**: **Restic** (35.8k stars, S3/SFTP backends) , **BorgBackup** (13.7k stars, dedup, compression) , **Kopia** (5.7k stars, lock-free dedup) , **Plakar** (zero-knowledge, petabyte-scale) .
-
-- **Kubernetes DR**: **Velero** (most mature, community 5/5) , **Kanister** (CNCF sandbox, application-aware blueprints) , **Stash** (GitOps-native, Restic-based) .
-
-- **SaaS/Email**: **Open Archiver** (M365/Gmail/IMAP archiving, full-text search) .
-
-- **Virtualization**: **DaliBackup-OSS** (Hyper-V, Proxmox, IMAP, Docker) .
-
-
-
-**Frameworks for building custom systems**: Combine **Bareos** for cross-platform enterprise backup with hypervisor plugins and tape support, **Restic** or **Kopia** for efficient deduplicated backup to cloud storage, **Velero** for Kubernetes cluster and volume backup, **Kanister** for application-level database backups on Kubernetes, **Plakar** for zero-trust encrypted backup at petabyte scale, and **Open Archiver** for SaaS email archiving. Add **PostgreSQL** for metadata persistence and **Docker** for deployment.
-
-
-
-## How to Contribute
-
-
-
-1. Fork the repo.
-
-2. Add/edit entries in `README.md` (follow existing format).
-
-3. Include: name, link, 1–2 sentence description, and whether it's SaaS or open-source.
-
-4. Submit PR with a short explanation.
-
-
-
-Star the repo if you find it useful!
-
-
-
-## Disclaimer
-
-
-
-- This is a **community-curated** list — not exhaustive and not an endorsement.
-
-- Cloud backup and disaster recovery platforms handle sensitive organizational data; ensure compliance with data protection regulations and internal security policies.
-
-- **Open-source reality**: The open-source ecosystem for backup and disaster recovery is **mature and production-ready** at the **backup engine** (**Restic**, **BorgBackup**, **Kopia**, **Plakar**), **enterprise backup** (**Bareos**), and **Kubernetes DR** (**Velero**, **Kanister**, **Stash**) layers. **DaliBackup-OSS** provides focused virtualization backup for Hyper-V and Proxmox . **Open Archiver** delivers sovereign email archiving for M365/Gmail/IMAP . However, **commercial platforms** (Veeam, Rubrik, Cohesity, Druva) provide **unified management consoles, application-aware recovery at scale, ransomware detection, and enterprise SLAs** that open-source alternatives require significant integration and engineering investment to match. The open-source path is most viable for organizations with strong infrastructure engineering capacity or for specific workloads (Kubernetes, VMs, email archiving).
-
-
+# Awesome Cloud Backup & Disaster Recovery 🚀
+
+<p align="center">
+  <img src="assets/banner.svg" alt="Awesome Cloud Backup & Disaster Recovery Banner" width="100%">
+</p>
+
+<p align="center">
+  <a href="https://github.com/ishandutta2007/Awesome-Awesome-Awesome"><img src="https://img.shields.io/badge/Awesome-%E2%9C%94-blueviolet?style=flat-square&logo=github" alt="Awesome"/></a><a href="https://discord.gg/jc4xtF58Ve"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a>
+  <a href="https://github.com/ishandutta2007/Awesome-Cloud-Backup-n-Disaster-Recovery/stargazers"><img src="https://img.shields.io/github/stars/ishandutta2007/Awesome-Cloud-Backup-n-Disaster-Recovery?style=flat-square&color=gold" alt="GitHub Stars"/></a>
+  <a href="https://github.com/ishandutta2007/Awesome-Cloud-Backup-n-Disaster-Recovery/network/members"><img src="https://img.shields.io/github/forks/ishandutta2007/Awesome-Cloud-Backup-n-Disaster-Recovery?style=flat-square&color=blue" alt="GitHub Forks"/></a>
+  <a href="https://github.com/ishandutta2007/Awesome-Cloud-Backup-n-Disaster-Recovery/blob/main/LICENSE"><img src="https://img.shields.io/github/license/ishandutta2007/Awesome-Cloud-Backup-n-Disaster-Recovery?style=flat-square" alt="License"/></a>
+  <a href="https://github.com/ishandutta2007"><img alt="GitHub followers" src="https://img.shields.io/github/followers/ishandutta2007?label=Follow" /></a>
+</p>
+
+## 📌 Ecosystem Overview & Market Insights 💡
+
+> **Market Analysis**: The global Cloud Backup & Disaster Recovery (DRaaS) market is estimated at **$14.2 Billion (2026)** and projected to reach over **$30 Billion by 2030** (CAGR ~18.5%).
+> 
+> **Market Structure**: The market is **moderately fragmented**. High-end enterprise data protection is led by established SaaS titans (Veeam, Rubrik, Cohesity), while open-source backup engines (Restic, Borg, Kopia, Velero) dominate developer, home lab, and self-hosted Kubernetes workloads.
+
+Welcome to the ultimate curated directory of **Cloud Backup**, **Disaster Recovery (DR)**, **Ransomware Resilience**, and **Kubernetes Data Protection** solutions! 🛡️
 
 ---
 
+## 📋 Table of Contents 📑
 
+- [🏢 SaaS & Commercial Platforms](#-saas--commercial-platforms)
+- [🔓 Open-Source GitHub Projects](#-open-source-github-projects)
+- [🤝 How to Contribute](#-how-to-contribute)
+- [💖 Support & Sponsorship](#-support--sponsorship)
+- [📈 Star History](#-star-history)
+- [⚠️ Disclaimer](#%EF%B8%8F-disclaimer)
 
-**Made for infrastructure engineers, backup administrators, SREs, and data protection teams.**
+---
 
-Let's make cloud backup and disaster recovery more open, transparent, and resilient.
+## 🏢 SaaS & Commercial Platforms 💼
+
+*Commercial cloud backup & disaster recovery platforms sorted by company scale (Valuation / Revenue).* 📊
+
+| Product | Enterprise Scale (Valuation / Revenue) 📈 | Starting Pricing Tier 💵 | Free Tier / Trial Limits ⏳ | Description 📝 |
+| :--- | :--- | :--- | :--- | :--- |
+| **[Veeam](https://www.veeam.com/)** ⚡ | **$15.0 Billion** valuation (~$2.0B ARR) | $155/workload/year (VUL subscription) | **Community Edition** (Free forever for up to 10 workloads) or 30-day unlimited trial | Industry-standard backup & recovery platform for virtual, physical, cloud, and SaaS workloads. |
+| **[Cohesity](https://www.cohesity.com/)** 🛡️ | **$7.0 Billion** valuation (~$1.5B ARR) | ~$29,000/year (10 BETB capacity tier) | 30-day free trial for DataProtect as a Service | Enterprise data management consolidating backup, recovery, and ransomware protection. |
+| **[Acronis](https://www.acronis.com/)** 🔒 | **$3.5 Billion** valuation | $85/workload/year (Cyber Protect Standard) | 30-day fully functional free trial | Cyber protection platform combining backup, disaster recovery, and AI-based ransomware defence. |
+| **[Druva](https://www.druva.com/)** ☁️ | **$2.0 Billion** valuation | $2.50/user/month (InSync endpoint) | 30-day free trial | Fully managed cloud-native SaaS data protection for endpoints, SaaS apps, and cloud workloads. |
+| **[Rubrik](https://www.rubrik.com/)** 🏰 | **$1.46 Billion** ARR (Public: RBRK) | ~$25,000/year base tier subscription | 30-day enterprise evaluation trial | Zero Trust data security platform offering immutable backups and automated ransomware recovery. |
+| **[Keepit](https://www.keepit.com/)** 📦 | **$100 Million** ARR ($80.6M funding) | $3.00/user/month | 30-day free trial upon request | Independent cloud-to-cloud backup for Microsoft 365, Google Workspace, and Salesforce. |
+| **[Backblaze Business](https://www.backblaze.com/)** 💾 | **$173 Million** ARR (Public: BLZE) | $6.95/TB/month (B2 Cloud Storage) | **10 GB** free B2 storage forever or 15-day endpoint backup trial | Low-cost cloud storage and automated endpoint backup for business data protection. |
+| **[CrashPlan](https://www.crashplan.com/)** 🖥️ | **$15.5 Million** ARR | $88/device/year (Essential plan) | 14-day full-featured free trial | Endpoint backup and recovery designed for small businesses and enterprise teams. |
+| **[HYCU](https://www.hycu.com/)** 🚀 | **$140 Million** total VC funding | $3.00/user/month (R-Cloud SaaS) | 14-day free trial for R-Cloud platform | Multi-cloud & SaaS backup platform purpose-built for Nutanix, VMware, and modern SaaS apps. |
+| **[Spanning](https://spanning.com/)** 📧 | Subsidiary of Kaseya ($2.0B+ Corp) | $48/user/year | 14-day no-commitment free trial | SaaS backup and granular recovery for Microsoft 365, Google Workspace, and Salesforce. |
+
+---
+
+## 🔓 Open-Source GitHub Projects 🌐
+
+*Community-driven open-source backup engines, Kubernetes DR controllers, and SaaS archivers sorted by GitHub Star count.* ⭐
+
+| Project | GitHub Stars 🌟 | Primary Category 🏷️ | License 📜 | Description 📝 |
+| :--- | :--- | :--- | :--- | :--- |
+| **[Restic](https://github.com/restic/restic)** ⚡ | [![Stars](https://img.shields.io/github/stars/restic/restic?style=social&color=white)](https://github.com/restic/restic/stargazers) | Cross-Platform Engine | BSD-2-Clause | Fast, secure, deduplicating backup engine supporting S3, SFTP, REST, and local storage. |
+| **[BorgBackup](https://github.com/borgbackup/borg)** 🗜️ | [![Stars](https://img.shields.io/github/stars/borgbackup/borg?style=social&color=white)](https://github.com/borgbackup/borg/stargazers) | Cross-Platform Engine | BSD-3-Clause | Deduplicating backup program with authenticated encryption and compression for Unix-like systems. |
+| **[Velero](https://github.com/vmware-tanzu/velero)** ☸️ | [![Stars](https://img.shields.io/github/stars/vmware-tanzu/velero?style=social&color=white)](https://github.com/vmware-tanzu/velero/stargazers) | Kubernetes DR | Apache-2.0 | De facto standard open-source Kubernetes cluster backup, migration, and disaster recovery. |
+| **[Duplicati](https://github.com/duplicati/duplicati)** 🌐 | [![Stars](https://img.shields.io/github/stars/duplicati/duplicati?style=social&color=white)](https://github.com/duplicati/duplicati/stargazers) | Web GUI Backup | LGPL-2.1 | Free backup client with WebUI to store encrypted, incremental backups on cloud storage providers. |
+| **[Kopia](https://github.com/kopia/kopia)** 🔐 | [![Stars](https://img.shields.io/github/stars/kopia/kopia?style=social&color=white)](https://github.com/kopia/kopia/stargazers) | Fast Backup Engine | Apache-2.0 | Cross-platform backup tool featuring fast lock-free deduplication, encryption, and CLI/GUI options. |
+| **[Duplicity](https://gitlab.com/duplicity/duplicity)** 📦 | [![Stars](https://img.shields.io/github/stars/duplicity/duplicity?style=social&color=white)](https://github.com/duplicity/duplicity/stargazers) | Encrypted Backup | GPL-2.0 | Bandwidth-efficient encrypted backup using librsync and standard GnuPG format. |
+| **[Bareos](https://github.com/bareos/bareos)** 🏢 | [![Stars](https://img.shields.io/github/stars/bareos/bareos?style=social&color=white)](https://github.com/bareos/bareos/stargazers) | Enterprise System | AGPL-3.0 | Network-wide enterprise backup software supporting hypervisor plugins (Proxmox, VMware) and tape libraries. |
+| **[Kanister](https://github.com/kanisterio/kanister)** 🏗️ | [![Stars](https://img.shields.io/github/stars/kanisterio/kanister?style=social&color=white)](https://github.com/kanisterio/kanister/stargazers) | K8s App Management | Apache-2.0 | CNCF sandbox framework for application-level data management and custom DB blueprints on Kubernetes. |
+| **[Stash](https://github.com/stashed/stash)** 🚀 | [![Stars](https://img.shields.io/github/stars/stashed/stash?style=social&color=white)](https://github.com/stashed/stash/stargazers) | K8s Native Backup | Apache-2.0 | Declarative, GitOps-native Kubernetes backup operator powered by Restic. |
+| **[Plakar](https://github.com/PlakarKorp/plakar)** 🔒 | [![Stars](https://img.shields.io/github/stars/PlakarKorp/plakar?style=social&color=white)](https://github.com/PlakarKorp/plakar/stargazers) | Zero-Trust Engine | ISC | Petabyte-scale zero-trust backup engine with native client-side zero-knowledge encryption. |
+| **[Open Archiver](https://github.com/LogicLabs-OU/OpenArchiver)** 📬 | [![Stars](https://img.shields.io/github/stars/LogicLabs-OU/OpenArchiver?style=social&color=white)](https://github.com/LogicLabs-OU/OpenArchiver/stargazers) | SaaS Email Archiving | AGPL-3.0 | Self-hosted email archiving platform for M365, Google Workspace, and IMAP with full-text search. |
+| **[Zmanda Pro](https://github.com/zmanda/zmanda)** ☁️ | [![Stars](https://img.shields.io/github/stars/zmanda/zmanda?style=social&color=white)](https://github.com/zmanda/zmanda/stargazers) | Hybrid Cloud DR | GPL-2.0 | Open-source enterprise hybrid cloud backup system built on Restic architecture. |
+| **[DaliBackup-OSS](https://github.com/daliranas/DaliBackup-OSS)** 🖥️ | [![Stars](https://img.shields.io/github/stars/daliranas/DaliBackup-OSS?style=social&color=white)](https://github.com/daliranas/DaliBackup-OSS/stargazers) | Hypervisor Backup | MIT | Lightweight Node.js/SQLite backup engine for Microsoft Hyper-V, Proxmox VE, and IMAP mailboxes. |
+
+---
+
+## 🤝 How to Contribute 🛠️
+
+Contributions are warmly welcomed! Help us expand this ecosystem reference:
+
+1. **Fork** the repository 🍴
+2. **Add/Update** your entry in [README.md](file:///C:/Users/ishan/Documents/Projects/Awesome-Cloud-Backup-n-Disaster-Recovery/README.md) following our table format
+3. Ensure description is concise and link points to official project or repository
+4. **Submit a Pull Request** with a brief summary of changes 🚀
+
+---
+
+## 💖 Support & Sponsorship ☕
+
+If you find this repository helpful for your infrastructure engineering or cloud data protection research, please consider supporting the project:
+
+- ⭐ **Star** this repository to increase visibility
+- 🔀 **Fork** and share with your team or SRE community
+- ☕ **Buy me a coffee**: Support ongoing open-source curation via the [GitHub Sponsor Dashboard](https://github.com/sponsors/ishandutta2007)!
+
+---
+
+## 📈 Star History 📊
+
+[![Star History Chart](https://star-history.dera.page/svg?repos=ishandutta2007/Awesome-Cloud-Backup-n-Disaster-Recovery&type=date&legend=top-left)](https://star-history.dera.page/#ishandutta2007/Awesome-Cloud-Backup-n-Disaster-Recovery&type=date&legend=top-left)
+
+---
+
+## ⚠️ Disclaimer 📜
+
+- This list is **community-curated** for educational and research purposes—it does not constitute an endorsement.
+- Cloud backup & disaster recovery platforms process critical business data; always perform independent compliance and security audits.
+- See guidelines on [Awesome-Awesome-Awesome](https://github.com/ishandutta2007/Awesome-Awesome-Awesome) for quality curation standards.
