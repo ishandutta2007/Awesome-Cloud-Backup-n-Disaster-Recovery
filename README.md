@@ -6,7 +6,7 @@
 
 <p align="center">
   <a href="https://github.com/ishandutta2007/Awesome-Awesome-Awesome"><img src="https://img.shields.io/badge/Awesome-%E2%9C%94-blueviolet?style=flat-square&logo=github" alt="Awesome"/></a><a href="https://discord.gg/jc4xtF58Ve"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a>
-  <a href="https://github.com/ishandutta2007/Awesome-Cloud-Backup-n-Disaster-Recovery/stargazers"><img src="https://img.shields.io/github/stars/ishandutta2007/Awesome-Cloud-Backup-n-Disaster-Recovery?style=flat-square&color=gold" alt="GitHub Stars"/></a>
+  <a href="https://github.com/ishandutta2007/Awesome-Cloud-Backup-n-Disaster-Recovery/stargazers"><img src="https://img.shields.io/github/stars/ishandutta2007/Awesome-Cloud-Backup-n-Disaster-Recovery?style=flat-square&color=gold" alt="GitHub_Stars"/></a>
   <a href="https://github.com/ishandutta2007/Awesome-Cloud-Backup-n-Disaster-Recovery/network/members"><img src="https://img.shields.io/github/forks/ishandutta2007/Awesome-Cloud-Backup-n-Disaster-Recovery?style=flat-square&color=blue" alt="GitHub Forks"/></a>
   <a href="https://github.com/ishandutta2007/Awesome-Cloud-Backup-n-Disaster-Recovery/blob/main/LICENSE"><img src="https://img.shields.io/github/license/ishandutta2007/Awesome-Cloud-Backup-n-Disaster-Recovery?style=flat-square" alt="License"/></a>
   <a href="https://github.com/ishandutta2007"><img alt="GitHub followers" src="https://img.shields.io/github/followers/ishandutta2007?label=Follow" /></a>
@@ -54,9 +54,9 @@ Welcome to the ultimate curated directory of **Cloud Backup**, **Disaster Recove
 
 ## 🔓 Open-Source GitHub Projects 🌐
 
-*Community-driven open-source backup engines, Kubernetes DR controllers, and SaaS archivers sorted by GitHub Star count.* ⭐
+*Community-driven open-source backup engines, Kubernetes DR controllers, and SaaS archivers sorted by GitHub Stars_Count.* ⭐
 
-| Project | GitHub Stars 🌟 | Primary Category 🏷️ | License 📜 | Description 📝 |
+| Project | GitHub_Stars 🌟 | Primary Category 🏷️ | License 📜 | Description 📝 |
 | :--- | :--- | :--- | :--- | :--- |
 | **[Restic](https://github.com/restic/restic)** ⚡ | [![Stars](https://img.shields.io/github/stars/restic/restic?style=social&color=white)](https://github.com/restic/restic/stargazers) | Cross-Platform Engine | BSD-2-Clause | Fast, secure, deduplicating backup engine supporting S3, SFTP, REST, and local storage. |
 | **[BorgBackup](https://github.com/borgbackup/borg)** 🗜️ | [![Stars](https://img.shields.io/github/stars/borgbackup/borg?style=social&color=white)](https://github.com/borgbackup/borg/stargazers) | Cross-Platform Engine | BSD-3-Clause | Deduplicating backup program with authenticated encryption and compression for Unix-like systems. |
